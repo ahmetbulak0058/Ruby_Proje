@@ -1,7 +1,10 @@
-puts "🌱 PulseDesk tohum verileri senkronize ediliyor (idempotent mod)..."
+puts "🌱 AKA tohum verileri senkronize ediliyor (idempotent mod)..."
+
+# Eski formatlı biletleri temizle (varsa)
+Ticket.where("reference_code LIKE 'PD-%'").destroy_all
 
 # Ticket 1: Acil & Yeni (Urgent & New) - Henüz temsilci atanmamış
-t1 = Ticket.find_or_create_by!(reference_code: "PD-1042") do |t|
+t1 = Ticket.find_or_create_by!(reference_code: "AKA-1042") do |t|
   t.customer_name = "Bora Aksoy (Hepsiburada Cloud Ops)"
   t.customer_email = "bora.aksoy@hepsiburada.com"
   t.subject = "Kritik PostgreSQL Connection Pool Tükendi Hatası"
@@ -14,7 +17,7 @@ t1 = Ticket.find_or_create_by!(reference_code: "PD-1042") do |t|
 end
 
 # Ticket 2: SLA İHLALİ (Breached) - Kırmızı Uyarı İçin
-t2 = Ticket.find_or_create_by!(reference_code: "PD-1088") do |t|
+t2 = Ticket.find_or_create_by!(reference_code: "AKA-1088") do |t|
   t.customer_name = "Zeynep Erdem (Trendyol B2B Entegrasyon)"
   t.customer_email = "zeynep.erdem@trendyol.com"
   t.subject = "Webhook Bildirimlerinde 10 Dakikalık Gecikme"
@@ -31,7 +34,7 @@ t2.comments.find_or_create_by!(author_name: "Zeynep Erdem", body: "Saat 15:00'da
 end
 
 # Ticket 3: SMART THANK-YOU GUARD (100 Puanlık Özellik - Devrede!)
-t3 = Ticket.find_or_create_by!(reference_code: "PD-2015") do |t|
+t3 = Ticket.find_or_create_by!(reference_code: "AKA-2015") do |t|
   t.customer_name = "Ece Karahan (Getir FinTech Sistemleri)"
   t.customer_email = "ece.karahan@getir.com"
   t.subject = "B2B Fatura İptal Yetkilendirmesi Sorunu"
@@ -52,7 +55,7 @@ t3.comments.find_or_create_by!(author_name: "Ece Karahan", body: "Harika, sorun 
 end
 
 # Ticket 4: Müşteri Bekleniyor (Pending)
-t4 = Ticket.find_or_create_by!(reference_code: "PD-3104") do |t|
+t4 = Ticket.find_or_create_by!(reference_code: "AKA-3104") do |t|
   t.customer_name = "Kaan Soydan (PayTR Altyapı Direktörü)"
   t.customer_email = "kaan@paytr.corp"
   t.subject = "Sandbox Ortamında TLS 1.3 Sertifika Uyumsuzluğu"
@@ -69,7 +72,7 @@ t4.comments.find_or_create_by!(author_name: "Selin Temsilci (Kıdemli Destek)", 
 end
 
 # Ticket 5: 48 Saat Dolduğu İçin Otomatik Kapatılan (Closed Stale)
-t5 = Ticket.find_or_create_by!(reference_code: "PD-4099") do |t|
+t5 = Ticket.find_or_create_by!(reference_code: "AKA-4099") do |t|
   t.customer_name = "Murat Çetin (Yemeksepeti Restoran Portalı)"
   t.customer_email = "murat.cetin@yemeksepeti.com"
   t.subject = "Menü API Kotası Rate Limit Artırımı"
@@ -87,7 +90,7 @@ t5.comments.find_or_create_by!(author_name: "Mert Destek Uzmanı", body: "Restor
 end
 
 # Ticket 6: Açık & Yüksek Öncelikli (Open & High Priority)
-t6 = Ticket.find_or_create_by!(reference_code: "PD-5201") do |t|
+t6 = Ticket.find_or_create_by!(reference_code: "AKA-5201") do |t|
   t.customer_name = "Deniz Aydın (Insider Ürün Ekibi)"
   t.customer_email = "deniz.aydin@useinsider.com"
   t.subject = "Kullanıcı Segmentasyon Senkronizasyon Kesintisi"
@@ -103,4 +106,4 @@ t6.comments.find_or_create_by!(author_name: "Selin Temsilci (Kıdemli Destek)", 
   c.author_role = "agent"
 end
 
-puts "✅ Tohum verileri başarıyla kontrol edildi/yüklendi. Toplam bilet: #{Ticket.count}, Toplam yorum: #{Comment.count}"
+puts "✅ AKA tohum verileri başarıyla yüklendi. Toplam bilet: #{Ticket.count}, Toplam yorum: #{Comment.count}"

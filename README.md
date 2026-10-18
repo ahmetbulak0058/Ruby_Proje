@@ -1,4 +1,4 @@
-# PulseDesk — Enterprise SLA & Incident Operations Engine
+# AKA — Enterprise SLA & Incident Operations Engine
 
 [![CI](https://github.com/KULLANICI_ADIN/REPO_ADIN/actions/workflows/ci.yml/badge.svg)](https://github.com/KULLANICI_ADIN/REPO_ADIN/actions)
 ![Ruby Version](https://img.shields.io/badge/Ruby-4.0.7-CC342D?logo=ruby&logoColor=white)
@@ -6,13 +6,13 @@
 ![TailwindCSS](https://img.shields.io/badge/TailwindCSS-v4.3-38B2AC?logo=tailwindcss&logoColor=white)
 ![Tests](https://img.shields.io/badge/Minitest-23%20Passed%20(94%20Assertions)-success)
 
-> **Canlı Uygulama URL:** [https://pulsedesk-demo.onrender.com](https://pulsedesk-demo.onrender.com) *(veya yerel ortam: `http://localhost:3000`)*
+> **Canlı Uygulama URL:** [https://aka-demo.onrender.com](https://aka-demo.onrender.com) *(veya yerel ortam: `http://localhost:3000`)*
 
 ---
 
 ## 1. Proje Özeti ve İlham Kaynağı
 
-* **Ürün Adı:** **PulseDesk**
+* **Ürün Adı:** **AKA**
 * **İlham Kaynağı:** **Zendesk Support** platformunun kurumsal çekirdek iş akışı olan **"Aort Dilimi"** modellenmiştir:
   $$\text{Talep Oluşturma} \longrightarrow \text{Temsilci Atama} \longrightarrow \text{SLA Geri Sayımı \& Yanıtlama} \longrightarrow \text{Çözüm (Resolve)} \longrightarrow \text{48s Otomatik Kapanış (Closed)}$$
 * **Fortune 500 Kanıtı:**
@@ -78,8 +78,8 @@ G2, Capterra ve Zendesk topluluk forumlarında yıllardır en çok dile getirile
 * 🔗 **Kanıt Linki 1:** [G2 Zendesk Support Reviews — Reopening Solved Tickets Pain Point](https://www.g2.com/products/zendesk-support-suite/reviews)
 * 🔗 **Kanıt Linki 2:** [Capterra Zendesk Customer Reviews](https://www.capterra.com/p/160047/Zendesk/)
 
-### PulseDesk'in Çözümü (`Smart Thank-You Guard`)
-PulseDesk, [`app/models/ticket.rb`](file:///c:/Users/blkah/Desktop/Ruby_Proje/app/models/ticket.rb) içerisinde yerleşik bir **Niyet ve Soru Tespiti Filtresi** barındırır:
+### AKA'nın Çözümü (`Smart Thank-You Guard`)
+AKA, [`app/models/ticket.rb`](file:///c:/Users/blkah/Desktop/Ruby_Proje/app/models/ticket.rb) içerisinde yerleşik bir **Niyet ve Soru Tespiti Filtresi** barındırır:
 1. Çözülmüş (`resolved`) bir bilete müşteri yanıt verdiğinde mesaj taranır.
 2. Eğer mesaj soru işareti (`?`) ya da problemin devam ettiğine dair olumsuz kelimeler (`hata`, `ama`, `çalışmıyor`, `not working` vb.) içermiyor; yalnızca teşekkür/onay (`teşekkürler`, `tesekkurler`, `sağ olun`, `çözüldü`, `thank you`, `thanks`, `harika` vb.) içeriyorsa:
    * **Bilet tekrar `open` YAPILMAZ**, `resolved` durumunda korunur.
@@ -94,7 +94,7 @@ PulseDesk, [`app/models/ticket.rb`](file:///c:/Users/blkah/Desktop/Ruby_Proje/ap
 Aort dilimine odaklanma stratejisi ve süre kısıtları nedeniyle bu versiyonda kapsam dışı bırakılan unsurlar:
 
 1. **Gerçek Zamanlı Gelen E-Posta Dinleyici (IMAP/SMTP Ingestion):** Gelen kutusundaki e-postaları doğrudan parse edip bilete dönüştüren arka plan servisi yazılmadı (bunun yerine web UI ve hızlı simülasyon modalı kuruldu).
-2. **Multi-Tenant (Çoklu Kiracı) İzolasyonu & Kurumsal SSO:** Organizasyon bazlı subdomain (`firma.pulsedesk.io`) ve SAML/Okta/Azure AD oturum açma entegrasyonu eklenmedi.
+2. **Multi-Tenant (Çoklu Kiracı) İzolasyonu & Kurumsal SSO:** Organizasyon bazlı subdomain (`firma.aka.io`) ve SAML/Okta/Azure AD oturum açma entegrasyonu eklenmedi.
 3. **Ek Dosya (Attachment / AWS S3) & Zengin Metin (WYSIWYG) Editörü:** Yanıtlara PDF/PNG gibi dosyalar ekleme altyapısı kurulmadı.
 4. **Çalışma Takvimi Bazlı SLA Hesabı (Business Hours Calendar):** Şu anda SLA 7/24 kesintisiz takvim saati üzerinden akmaktadır; hafta sonları ve resmi tatillerde sayacı donduran mesai takvimi motoru dahil edilmedi.
 
@@ -105,10 +105,10 @@ Aort dilimine odaklanma stratejisi ve süre kısıtları nedeniyle bu versiyonda
 Mimari kuralların tamamı [`AGENT.md`](file:///c:/Users/blkah/Desktop/Ruby_Proje/AGENT.md) sözleşmesiyle mühürlenmiştir:
 * **Skinny Controller, Rich Model:** Durum geçişleri (`assign_to!`, `add_agent_reply!`, `resolve!`, `close_if_stale!`, `add_customer_reply!`) ve SLA matematik formülleri doğrudan [`app/models/ticket.rb`](file:///c:/Users/blkah/Desktop/Ruby_Proje/app/models/ticket.rb) dosyasındadır.
 * **Sıfır Sahte Test Kuralı:** Tüm zaman testleri `ActiveSupport::Testing::TimeHelpers` (`travel_to`) ile gerçek veritabanında test edilir.
-* **Marka Koruma Kuralı:** Arayüzde veya kodlarda rakip SaaS markası geçmez, özgün SVG logo ve **PulseDesk** markası kullanılır.
+* **Marka Koruma Kuralı:** Arayüzde veya kodlarda rakip SaaS markası geçmez, özgün SVG logo ve **AKA** markası kullanılır.
 
 ```
-PulseDesk/
+AKA/
 ├── AGENT.md                       # Ajan çalışma ilkeleri ve mimari sorumluluk matrisi
 ├── README.md                      # Kapsamlı proje dokümantasyonu ve kaynaklar
 ├── render.yaml                    # Render.com Blueprint dağıtım yapılandırması
@@ -125,7 +125,7 @@ PulseDesk/
 │   │   ├── index.html.erb         # Dashboard metrikleri, filtreler & hızlı modal
 │   │   └── show.html.erb          # Detay, Stepper, Mesajlaşma & Demo Simülatörü
 │   └── assets/images/
-│       └── pulsedesk_logo.svg     # Özgün SVG vektör marka logosu
+│       └── aka_logo.svg           # Özgün SVG vektör marka logosu
 ├── bin/
 │   └── render-build.sh            # Render.com üretim derleme ve tohum betiği
 ├── db/

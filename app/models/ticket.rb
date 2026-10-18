@@ -219,7 +219,7 @@ class Ticket < ApplicationRecord
     return if reference_code.present?
 
     loop do
-      candidate = "PD-#{rand(1000..9999)}"
+      candidate = "AKA-#{rand(1000..9999)}"
       unless Ticket.exists?(reference_code: candidate)
         self.reference_code = candidate
         break

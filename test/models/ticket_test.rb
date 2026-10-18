@@ -21,7 +21,7 @@ class TicketTest < ActiveSupport::TestCase
     ticket = Ticket.create!(valid_attributes)
 
     assert ticket.persisted?
-    assert_match(/\APD-\d{4}\z/, ticket.reference_code)
+    assert_match(/\AAKA-\d{4}\z/, ticket.reference_code)
     assert_equal "new", ticket.status
     assert_equal "normal", ticket.priority
     assert_equal false, ticket.reopen_prevented

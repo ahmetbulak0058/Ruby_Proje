@@ -15,7 +15,7 @@ class TicketsControllerTest < ActionDispatch::IntegrationTest
     get root_url
     assert_response :success
     assert_select "h1", text: /SLA & Destek Operasyon Merkezi/
-    assert_select "p", text: "PulseDesk © #{Time.current.year} — Enterprise SLA & Incident Operations Platform"
+    assert_select "p", text: "AKA © #{Time.current.year} — Enterprise SLA & Incident Operations Platform"
   end
 
   test "should filter tickets by status" do

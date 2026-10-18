@@ -1,6 +1,6 @@
-# PulseDesk — Agent Çalışma İlkeleri ve Mimari Standartlar
+# AKA — Agent Çalışma İlkeleri ve Mimari Standartlar
 
-> **Proje Adı:** PulseDesk  
+> **Proje Adı:** AKA  
 > **Tanım:** Kurumsal B2B Müşteri Destek, Bilet (Ticket) ve Dinamik SLA Takip Platformu  
 > **Teknoloji:** Ruby on Rails 8+, SQLite3, TailwindCSS v4, Hotwire (Turbo 8 & Stimulus), Minitest  
 
@@ -8,7 +8,7 @@
 
 ## 1. Proje Vizyonu ve Kimliği
 
-PulseDesk, kurumsal organizasyonların yüksek tempolu müşteri destek operasyonlarını, acil taleplerini ve hizmet seviyesi taahhütlerini (SLA - Service Level Agreement) anlık olarak yönetebileceği modern, reaktif ve yüksek performanslı bir B2B SaaS platformudur.
+AKA, kurumsal organizasyonların yüksek tempolu müşteri destek operasyonlarını, acil taleplerini ve hizmet seviyesi taahhütlerini (SLA - Service Level Agreement) anlık olarak yönetebileceği modern, reaktif ve yüksek performanslı bir B2B SaaS platformudur.
 
 ### Temel Yetkinlikler:
 1. **Talep (Ticket) Yaşam Döngüsü Yönetimi:** Yeni taleplerin oluşturulması, önceliklendirilmesi, durum geçişleri ve kapatılması.
@@ -20,9 +20,9 @@ PulseDesk, kurumsal organizasyonların yüksek tempolu müşteri destek operasyo
 
 ## 2. Kesin Marka ve İsimlendirme Kuralları (Brand Policy)
 
-* **Özgün Marka Kuralı:** Projenin tek ve yegane markası **"PulseDesk"**tir.
+* **Özgün Marka Kuralı:** Projenin tek ve yegane markası **"AKA"**dır.
 * **Sıfır Referans İlkesi:** Kod tabanında, commit mesajlarında, değişken/sınıf adlarında, CSS sınıflarında, arayüz metinlerinde, yorum satırlarında veya dokümantasyonlarda rakip/orijinal SaaS sistemlerinin (örn. Zendesk) ismi, kısaltması veya logosu **KESİNLİKLE YER ALAMAZ**.
-* **Görsel Kimlik:** PulseDesk'e özel vektörel (SVG) logosu ve modern kurumsal renk paleti (Modern Indigo/Cyan/Slate/Emerald aksanları) kullanılacaktır.
+* **Görsel Kimlik:** AKA'ya özel vektörel (SVG) logosu ve modern kurumsal renk paleti (Modern Indigo/Violet/Cyan/Slate aksanları) kullanılacaktır.
 
 ---
 

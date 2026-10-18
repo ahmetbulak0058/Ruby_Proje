@@ -2,7 +2,7 @@
 # Exit immediately if a command exits with a non-zero status
 set -o errexit
 
-echo "🚀 [PulseDesk] Render Build Başlatılıyor..."
+echo "🚀 [AKA] Render Build Başlatılıyor..."
 
 # 1. Ruby bağımlılıklarını yükle
 echo "📦 Bundle install çalıştırılıyor..."
@@ -24,4 +24,4 @@ bundle exec rails db:migrate
 echo "🌱 Canlı ortam demo verileri yükleniyor..."
 bundle exec rails db:seed
 
-echo "✅ [PulseDesk] Render Build başarıyla tamamlandı!"
+echo "✅ [AKA] Render Build başarıyla tamamlandı!"

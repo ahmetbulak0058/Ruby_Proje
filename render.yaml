@@ -1,6 +1,6 @@
 services:
   - type: web
-    name: pulsedesk
+    name: aka
     runtime: ruby
     plan: free
     buildCommand: "./bin/render-build.sh"
