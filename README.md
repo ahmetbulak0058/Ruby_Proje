@@ -7,7 +7,7 @@
 ![Tests](https://img.shields.io/badge/Minitest-23%20Passed%20(94%20Assertions)-success)
 
 > **GitHub Depo Linki:** [https://github.com/ahmetbulak0058/Ruby_Proje](https://github.com/ahmetbulak0058/Ruby_Proje)  
-> **Canlı Render URL:** [https://aka-demo.onrender.com](https://aka-demo.onrender.com) *(veya yerel ortam: `http://localhost:3000`)*
+> **Canlı Render URL:** [https://aka-t4oe.onrender.com](https://aka-t4oe.onrender.com) *(veya yerel ortam: `http://localhost:3000`)*
 
 **AKA**, kurumsal müşteri destek operasyonlarının omurgası olan bilet (ticket) yaşam döngüsünü ve dinamik SLA (Service Level Agreement) takibini yürüten, çözülen biletlerin müşterinin nezaket teşekkürüyle gereksiz yere tekrar açılmasını engelleyen yerleşik **Smart Thank-You Guard** teknolojisine sahip, **Ruby on Rails 8, SQLite/PostgreSQL ve Tailwind CSS** ile geliştirilmiş modern bir B2B destek platformudur.
 
