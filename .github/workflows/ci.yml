@@ -1,4 +1,4 @@
-name: PulseDesk CI
+name: AKA CI
 
 on:
   push:
