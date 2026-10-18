@@ -1,11 +1,12 @@
 # AKA — Akıllı SLA ve Kurumsal Bilet Yönetim Sistemi
 
-[![CI](https://github.com/KULLANICI_ADIN/REPO_ADIN/actions/workflows/ci.yml/badge.svg)](https://github.com/KULLANICI_ADIN/REPO_ADIN/actions)
+[![CI](https://github.com/ahmetbulak0058/Ruby_Proje/actions/workflows/ci.yml/badge.svg)](https://github.com/ahmetbulak0058/Ruby_Proje/actions)
 ![Ruby Version](https://img.shields.io/badge/Ruby-4.0.7-CC342D?logo=ruby&logoColor=white)
 ![Rails Version](https://img.shields.io/badge/Rails-8.1.4-D30001?logo=rubyonrails&logoColor=white)
 ![TailwindCSS](https://img.shields.io/badge/TailwindCSS-v4.3-38B2AC?logo=tailwindcss&logoColor=white)
 ![Tests](https://img.shields.io/badge/Minitest-23%20Passed%20(94%20Assertions)-success)
 
+> **GitHub Depo Linki:** [https://github.com/ahmetbulak0058/Ruby_Proje](https://github.com/ahmetbulak0058/Ruby_Proje)  
 > **Canlı Render URL:** [https://aka-demo.onrender.com](https://aka-demo.onrender.com) *(veya yerel ortam: `http://localhost:3000`)*
 
 **AKA**, kurumsal müşteri destek operasyonlarının omurgası olan bilet (ticket) yaşam döngüsünü ve dinamik SLA (Service Level Agreement) takibini yürüten, çözülen biletlerin müşterinin nezaket teşekkürüyle gereksiz yere tekrar açılmasını engelleyen yerleşik **Smart Thank-You Guard** teknolojisine sahip, **Ruby on Rails 8, SQLite/PostgreSQL ve Tailwind CSS** ile geliştirilmiş modern bir B2B destek platformudur.
