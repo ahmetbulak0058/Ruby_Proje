@@ -1,0 +1,31 @@
+name: PulseDesk CI
+
+on:
+  push:
+    branches: [ master, main ]
+  pull_request:
+    branches: [ master, main ]
+
+jobs:
+  test:
+    name: Minitest Suite & SLA Verification
+    runs-on: ubuntu-latest
+
+    env:
+      RAILS_ENV: test
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: '.ruby-version'
+          bundler-cache: true
+
+      - name: Prepare SQLite Test Database
+        run: bin/rails db:test:prepare
+
+      - name: Run Minitest Test Suite
+        run: bin/rails test
